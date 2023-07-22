@@ -19,12 +19,12 @@ const App = () => {
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="about" element={<LazyAbout/>}></Route>
-      <Route path="order-summary" element={
-        <React.Suspense fallback='loading...'>
-         <OrderSummary/>
-        </React.Suspense>
+      <Route path="about" element={
+        <React.Suspense fallback='Loading...'>
+          <LazyAbout/>
+       </React.Suspense>
       } />
+      <Route path="order-summary" element={ <OrderSummary/> } />
       <Route path="products" element={<Products/>}>
         <Route index element={<Featured />} />
         <Route path="featured" element={<Featured />} />
